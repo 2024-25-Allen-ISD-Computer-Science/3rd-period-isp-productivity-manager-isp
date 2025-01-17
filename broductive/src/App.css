@@ -1,4 +1,4 @@
-/* Styles for the main container */
+/* General layout for the container */
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -27,4 +27,16 @@
 .quadrant:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the Notes textarea */
+.notes-textarea {
+  width: 90%;
+  height: 100px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: none; /* Prevent resizing */
 }
