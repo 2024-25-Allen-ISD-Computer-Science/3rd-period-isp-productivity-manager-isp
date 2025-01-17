@@ -1,4 +1,3 @@
-/* General layout for the container */
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -8,7 +7,7 @@
   box-sizing: border-box;
 }
 
-/* Styles for each quadrant */
+
 .quadrant {
   display: flex;
   flex-direction: column;
@@ -23,7 +22,7 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover effect for quadrants */
+/*hovereffects*/
 .quadrant:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);

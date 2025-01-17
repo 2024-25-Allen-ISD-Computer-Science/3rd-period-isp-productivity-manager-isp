@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 const App = () => {
-  const [notes, setNotes] = useState(''); // State to hold the notes content
+  const [notes, setNotes] = useState(''); 
 
   return (
     <div className="container">
