@@ -1,45 +1,143 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f4f4f4;
+body, html {
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad390);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
+
+
+.app-container {
+  display: flex;
+  height: 90%;
+  width: 90%;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.activity-summary {
+  width: 35%; /* Increased width */
+  padding: 30px; /* More padding for a spacious look */
+  background: #f8f9fa;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: -20px; /* Move the sidebar slightly to the left */
+  border-top-left-radius: 20px; /* Rounded corners for aesthetics */
+  border-bottom-left-radius: 20px;
+}
+
+.activity-summary h2 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.activity-summary p {
+  font-size: 1em;
+  margin: 5px 0;
+}
+
 
 .container {
-  max-width: 400px;
-  margin: auto;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-h1, h3 {
-  margin-bottom: 10px;
+
+h1 {
+  font-size: 2.5em;
+  color: #007bff;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
+
 
 .tabs {
   display: flex;
   justify-content: center;
-  gap: 5px;
+  margin-bottom: 20px;
+  gap: 10px;
 }
 
 .tabs button {
-  padding: 5px 10px;
+  flex: 1;
+  padding: 10px;
+  font-size: 1em;
   border: none;
-  background: #ddd;
+  border-radius: 20px;
+  background: #e9ecef;
   cursor: pointer;
+  color: #333;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.tabs button:hover {
+  background: #007bff;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
 }
 
 .tabs .active {
   background: #007bff;
   color: white;
+  box-shadow: 0 8px 15px rgba(0, 123, 255, 0.5);
+  transform: scale(1.05);
 }
 
-.task-input input, .task-input button {
-  margin: 5px;
-  padding: 5px;
+
+.task-input {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.task-input button {
+  padding: 10px 20px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-input button:hover {
+  background: #218838;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(40, 167, 69, 0.3);
+}
+
+.task-input button:active {
+  transform: scale(0.95);
+  background: #1e7e34;
 }
 
 .task-list ul {
@@ -50,22 +148,61 @@ h1, h3 {
 .task-list li {
   display: flex;
   justify-content: space-between;
-  padding: 5px;
-  background: #f9f9f9;
-  margin: 5px 0;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f4f4f4;
   border-radius: 5px;
+  transition: transform 0.2s;
 }
 
+.task-list li:hover {
+  transform: scale(1.03);
+}
+
+/* Pomodoro timer */
 .pomodoro {
-  margin-top: 20px;
+  text-align: center;
 }
 
 .timer {
-  font-size: 24px;
-  margin: 10px 0;
+  font-size: 3em;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #007bff;
 }
 
+.pomodoro button {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pomodoro button:hover {
+  background: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+}
+
+.pomodoro button:active {
+  transform: scale(0.95);
+  background: #004085;
+}
+
+/* Input styles for Pomodoro */
 .timer-settings input {
-  width: 40px;
-  margin: 5px;
+  width: 50px;
+  padding: 5px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
 }
