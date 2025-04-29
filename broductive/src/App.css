@@ -1,30 +1,206 @@
-/* Styles for the main container */
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1f2937;
+  color: white;
 }
 
-/* Styles for each quadrant */
-.quadrant {
+.app {
+  padding: 1.5rem;
+  min-height: 100vh;
+}
+
+/* View Toggle Buttons */
+.view-toggle {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.view-toggle button {
+  background-color: #374151;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.view-toggle button.active {
+  background-color: #3b82f6;
+  font-weight: bold;
+}
+
+/* Calendar Navigation */
+.calendar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-nav input[type="date"] {
+  background-color: #334155;
+  color: white;
+  border: none;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+}
+
+/* Weekly Tabs */
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #374151;
+  padding-bottom: 1rem;
+}
+
+.tab {
+  text-align: center;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+  color: #22c55e;
+  font-weight: bold;
+  border-bottom-color: #22c55e;
+}
+
+.streak {
+  display: block;
+  font-size: 0.7rem;
+  color: #facc15;
+  margin-top: 2px;
+}
+
+/* Progress Bar */
+.progress-bar {
+  margin-top: 0.5rem;
+  height: 6px;
+  background-color: #374151;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #22c55e;
+  transition: width 0.3s ease;
+}
+
+/* Task List */
+.task-section {
+  margin-top: 2rem;
+}
+
+.task-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.add-task-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.task-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  background-color: #374151;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-item.completed {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.checkbox-large {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Popup Modal */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  background-color: #f9f9f9;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 10;
 }
 
-/* Hover effect for quadrants */
-.quadrant:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.popup {
+  background-color: #1e293b;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.popup input,
+.popup select {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: none;
+  background-color: #334155;
+  color: white;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.popup-buttons button:first-child {
+  background-color: #22c55e;
+  color: white;
+}
+
+.popup-buttons button:last-child {
+  background-color: #ef4444;
+  color: white;
+}
+
+/* Highlighted Labels */
+.highlight {
+  color: #38bdf8;
+  font-weight: bold;
 }
